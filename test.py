@@ -1,51 +1,29 @@
-from typing import Annotated
+"""Test script for the refactored chatbot.
 
-from langchain.chat_models import init_chat_model
-from typing_extensions import TypedDict
+This file demonstrates how to use the new structured chatbot implementation.
+The original code has been refactored into the backend/chatbot directory.
+"""
 
-from langgraph.graph import StateGraph, START, END
-from langgraph.graph.message import add_messages
-
-
-class State(TypedDict):
-    messages: Annotated[list, add_messages]
+from backend.chatbot import StreamHandler
 
 
-graph_builder = StateGraph(State)
+def main():
+    """Test the refactored chatbot implementation."""
+    print("Testing the refactored chatbot...")
+    print("=" * 50)
+    
+    # Create a stream handler using the new structure
+    stream_handler = StreamHandler()
+    
+    # Test with a sample input
+    test_input = "What do you know about LangGraph?"
+    print(f"User: {test_input}")
+    stream_handler.print_stream(test_input)
+    
+    print("\n" + "=" * 50)
+    print("Test completed! The chatbot is now properly structured.")
+    print("Run 'python backend/chatbot/main.py' to use the interactive version.")
 
 
-llm = init_chat_model("anthropic:claude-3-7-sonnet-latest")
-
-
-def chatbot(state: State):
-    return {"messages": [llm.invoke(state["messages"])]}
-
-
-# The first argument is the unique node name
-# The second argument is the function or object that will be called whenever
-# the node is used.
-graph_builder.add_node("chatbot", chatbot)
-graph_builder.add_edge(START, "chatbot")
-graph_builder.add_edge("chatbot", END)
-graph = graph_builder.compile()
-
-
-def stream_graph_updates(user_input: str):
-    for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
-        for value in event.values():
-            print("Assistant:", value["messages"][-1].content)
-
-
-while True:
-    try:
-        user_input = input("User: ")
-        if user_input.lower() in ["quit", "exit", "q"]:
-            print("Goodbye!")
-            break
-        stream_graph_updates(user_input)
-    except:
-        # fallback if input() is not available
-        user_input = "What do you know about LangGraph?"
-        print("User: " + user_input)
-        stream_graph_updates(user_input)
-        break
+if __name__ == "__main__":
+    main()
