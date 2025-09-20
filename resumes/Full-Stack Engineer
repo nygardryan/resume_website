@@ -1,0 +1,40 @@
+Ryan Nygard
+[LinkedIn] | [Portfolio Website] | [GitHub] | [Email] | [Phone]
+
+Summary
+Full-Stack Engineer with strong backend foundations in Python (Flask, SQLAlchemy) and frontend expertise in React, TypeScript, and modern build tooling (Vite, TanStack Router). Skilled at delivering user-facing features integrated with complex backend systems, including AI-powered workflows, multi-form dynamic UIs, and organizational hierarchies. Passionate about building responsive, maintainable web applications at scale.
+
+Core Skills
+
+Frontend: React, TypeScript, Vite, TanStack Router, React Query, MUI 5
+
+Backend: Python, Flask, SQLAlchemy, Alembic, Celery
+
+Database: Postgres, pgvector, advanced indexing
+
+AI/LLM Tooling: Claude, ChatGPT, Gemini APIs
+
+CI/CD: GitHub Actions, Docker, AWS
+
+Professional Experience
+Full-Stack Engineer – RLDatix (Innovation Team)
+2022–Present
+
+Built React front-end system with dynamic form rendering using MUI 5 + custom design tokens.
+
+Implemented TanStack Router navigation for nested routes and optimized React Query data fetching.
+
+Developed Severity Control Settings page, enabling admin control over AHRQ harm scales with modals for active form conflicts.
+
+Integrated Flask backend APIs with LLM-powered chatbot workflows, including field validation and confirmation UI.
+
+Designed deepPurple design palette + reusable component library for internal apps.
+
+Projects
+
+Resume Website (Webador) – AI-powered resume website with LangGraph integration for role-specific tailoring.
+
+Streamlit Data Tools – Built exploratory dashboards with custom Python logic.
+
+Education
+B.S. Computer Science – [Your University]

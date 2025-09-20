@@ -1,0 +1,23 @@
+# Core LangGraph dependencies
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-anthropic>=0.2.0
+
+# Additional dependencies
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+typing-extensions>=4.0.0
+
+# Development dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Optional: for specific use cases
+# langchain-openai>=0.2.0  # For OpenAI models
+# langchain-google-genai>=2.0.0  # For Google models
+# langchain-mistralai>=0.2.0  # For Mistral models

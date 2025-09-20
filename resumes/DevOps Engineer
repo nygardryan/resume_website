@@ -1,0 +1,40 @@
+Ryan Nygard
+[LinkedIn] | [Portfolio Website] | [GitHub] | [Email] | [Phone]
+
+Summary
+DevOps Engineer with strong expertise in automation, CI/CD, and cloud-native infrastructure. Skilled in containerization, observability, and deployment pipelines that improve developer productivity and system reliability. Experienced in bridging engineering and operations to ensure smooth delivery of complex, AI-enabled healthcare systems.
+
+Core Skills
+
+CI/CD: GitHub Actions, Jenkins, Build Automation
+
+Cloud: AWS (EC2, S3, RDS, ECS), Docker, Terraform
+
+Monitoring & Logging: Grafana, Prometheus, ELK Stack
+
+Scripting: Python, Bash
+
+Infrastructure as Code & Deployment Strategies
+
+Professional Experience
+DevOps Engineer – RLDatix (Innovation Team)
+2022–Present
+
+Built CI/CD pipelines for backend services and React front-end deployments, automating test, build, and release processes.
+
+Managed containerized microservices with Docker and orchestrated deployments across staging and production.
+
+Automated infrastructure provisioning with Infrastructure-as-Code templates.
+
+Implemented system monitoring dashboards with alerts for service health and performance degradation.
+
+Collaborated with backend and AI teams to deploy model-driven APIs into secure, scalable environments.
+
+Projects
+
+End-to-end deployment workflows for healthcare web apps.
+
+Automated testing suite integrated into CI/CD pipelines.
+
+Education
+B.S. Computer Science – [Your University]

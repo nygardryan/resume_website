@@ -1,0 +1,40 @@
+Ryan Nygard
+[LinkedIn] | [Portfolio Website] | [GitHub] | [Email] | [Phone]
+
+Summary
+Backend Engineer specializing in Python and SQL with deep expertise in database design, migrations, and high-performance API development. Experienced in architecting distributed systems, building scalable schemas, and optimizing data access. Strong background in integrating AI pipelines and supporting healthcare workflows through resilient backend services.
+
+Core Skills
+
+Python, Flask, Async APIs
+
+SQL, Postgres, Indexing & Query Optimization
+
+Migrations, Schema Refactoring, Data Modeling
+
+Distributed Task Queues, Workflow Automation
+
+Cloud Integration (AWS, Docker, CI/CD)
+
+Professional Experience
+Backend Engineer – RLDatix (Innovation Team)
+2022–Present
+
+Designed normalized and flexible database schemas for healthcare event reporting across multiple sites and hierarchies.
+
+Performed complex migrations to unify choice data and standardize severity/harm classification systems.
+
+Built distributed task pipelines to process AI-assisted field completion and record validation at scale.
+
+Optimized SQL queries with composite indexes and partitioning strategies to handle millions of records.
+
+Integrated cloud-hosted APIs with backend services, ensuring low-latency responses for user-facing apps.
+
+Projects
+
+Healthcare form backend supporting 20+ event types.
+
+Resume tailoring system for role-specific outputs.
+
+Education
+B.S. Computer Science – [Your University]

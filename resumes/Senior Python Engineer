@@ -1,0 +1,40 @@
+Ryan Nygard
+[LinkedIn] | [Portfolio Website] | [GitHub] | [Email] | [Phone]
+
+Summary
+Senior Python Engineer with extensive experience designing scalable backend systems, ORM data models, and distributed workflows. Adept at SQLAlchemy, Flask, Celery, and Alembic migrations. Proven track record of leading data model refactors, architecting form-filling AI integrations, and driving cost-efficient LLM orchestration pipelines. Strong focus on performance, maintainability, and developer tooling.
+
+Core Skills
+
+Python (3.10–3.12), SQLAlchemy ORM, Alembic, Flask
+
+Celery, Redis, Postgres (pgvector, composite indexes)
+
+API Design (REST/GraphQL), Async Workflows
+
+Unit/Integration Testing, Pytest, CI/CD
+
+AI/LLM Integration (Claude, ChatGPT, Gemini APIs)
+
+Professional Experience
+Senior Engineer – RLDatix (Innovation Team)
+2022–Present
+
+Architected EAV-style form system with dynamic FormTemplate / FieldLibrary / FormSubmissionAnswers, supporting 20+ healthcare safety forms.
+
+Implemented pgvector embeddings + RAG pipelines for patient lookup, enabling fast fuzzy matching on MRN, DOB, and name.
+
+Designed Prompt Orchestration Framework: async Celery workers running multi-prompt chains for AI-powered form completion, cutting turnaround time by 60%.
+
+Led multiple Alembic enum migrations, composite index creation, and performance optimizations across millions of rows.
+
+Integrated Flask APIs with React front-end and AWS services, ensuring scalability and low latency.
+
+Projects
+
+EvolutionSimulationV1 (GitHub) – Python agent-based simulation with custom math and visualization.
+
+Medication Analysis CLI – AI tool to parse medication records and identify dosage anomalies using LLM APIs.
+
+Education
+B.S. Computer Science – [Your University]
