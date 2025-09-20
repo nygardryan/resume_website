@@ -80,7 +80,7 @@ tools = [resume_tool]
 llm_with_tools = llm.bind_tools(tools)
 
 def chatbot(state: State):
-    return {"messages": [SystemMessage(personality)] + [llm_with_tools.invoke(state["messages"])]}
+    return {"messages": [llm_with_tools.invoke([SystemMessage(content=personality)] + state["messages"])]}
 
 tool_node = ToolNode(tools=tools)
 
