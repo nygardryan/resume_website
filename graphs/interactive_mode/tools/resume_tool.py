@@ -5,7 +5,7 @@ from langchain_core.tools import tool
 
 
 
-resume_path = Path("resumes")
+resume_path = Path(__file__).parent.parent.parent / "resumes"
 
 
 

@@ -1,6 +1,5 @@
-from state import State
-
-from graph import graph
+from graphs.interactive_mode.state import State
+from graphs.interactive_mode.graph import graph
 
 
 def interactive_mode():

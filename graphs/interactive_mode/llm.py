@@ -1,5 +1,5 @@
 from langchain.chat_models import init_chat_model
-from tools import tools
+from .tools import tools
 
 
 llm = init_chat_model(
