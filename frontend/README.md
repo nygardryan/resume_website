@@ -1,95 +1,123 @@
 # Resume Website Frontend
 
-A modern, responsive personal portfolio website built with React and Material UI.
+A modern, responsive React application built with Material-UI for showcasing professional portfolios and resumes.
 
 ## Features
 
-- 🎨 **Modern Design**: Beautiful dark theme with gradient accents
-- 📱 **Responsive**: Works perfectly on all devices
-- ⚡ **Fast**: Built with Vite for optimal performance
-- 🎭 **Animations**: Smooth animations with Framer Motion
-- 🧭 **Navigation**: React Router for seamless page transitions
-- 📧 **Contact Form**: Interactive contact form with validation
-- 🎯 **SEO Ready**: Optimized for search engines
+- **Responsive Design**: Mobile-first approach with Material-UI components
+- **Modern UI**: Clean, professional design following Material Design principles
+- **Navigation**: Smooth routing between different sections
+- **Customizable Theme**: Easy-to-modify theme configuration
+- **Contact Form**: Interactive contact form with validation
+- **Resume Display**: Professional resume layout with downloadable PDF option
+
+## Pages
+
+- **Home**: Landing page with hero section and quick navigation
+- **About**: Personal information, skills, and experience overview
+- **Resume**: Detailed professional experience and education
+- **Contact**: Contact form and information
 
 ## Tech Stack
 
-- **React 19** - Latest React with concurrent features
-- **Material UI 7** - Modern component library
-- **Framer Motion** - Smooth animations and transitions
-- **React Router** - Client-side routing
-- **Vite** - Fast build tool and dev server
+- React 19
+- Material-UI (MUI) v7
+- React Router v7
+- Vite (build tool)
+- Emotion (CSS-in-JS)
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- pnpm (recommended) or npm
+- Node.js (v18 or higher)
+- pnpm (package manager)
 
 ### Installation
 
+1. Install dependencies:
 ```bash
-# Install dependencies
 pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
 ```
+
+2. Start the development server:
+```bash
+pnpm dev
+```
+
+3. Open your browser and navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
 
 ## Project Structure
 
 ```
-frontend/
-├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/         # Page components
-│   ├── App.jsx        # Main app component
-│   └── main.jsx       # Entry point
-├── public/            # Static assets
-├── index.html         # HTML template
-└── vite.config.js     # Vite configuration
+src/
+├── components/
+│   └── Layout/
+│       └── Layout.jsx          # Main layout with navigation
+├── pages/
+│   ├── Home/
+│   │   └── Home.jsx            # Landing page
+│   ├── About/
+│   │   └── About.jsx           # About page
+│   ├── Resume/
+│   │   └── Resume.jsx          # Resume page
+│   └── Contact/
+│       └── Contact.jsx         # Contact page
+├── styles/
+│   └── globalStyles.js         # Reusable styled components
+├── theme/
+│   └── theme.js                # MUI theme configuration
+├── App.jsx                     # Main app component
+└── main.jsx                    # Entry point
 ```
-
-## Pages
-
-- **Home** - Hero section with featured projects
-- **About** - Skills, experience, and education
-- **Projects** - Portfolio showcase with filtering
-- **Contact** - Contact form and social links
 
 ## Customization
 
-The website is fully customizable:
+### Theme Customization
 
-1. **Colors**: Update the theme in `src/main.jsx`
-2. **Content**: Modify page components in `src/pages/`
-3. **Projects**: Add your projects in `src/pages/Projects.jsx`
-4. **Contact Info**: Update contact details in `src/pages/Contact.jsx`
+The theme is configured in `src/theme/theme.js`. You can easily modify:
+
+- Colors (primary, secondary, background, text)
+- Typography (fonts, sizes, weights)
+- Component styles (buttons, cards, etc.)
+- Spacing and border radius
+
+### Styling
+
+Global styles and reusable components are in `src/styles/globalStyles.js`. These include:
+
+- `PageContainer` - Main page wrapper
+- `MainContent` - Content area with responsive padding
+- `SectionContainer` - Styled section wrapper
+- `FlexContainer` - Responsive flex layout
+- `GridContainer` - Responsive grid layout
+
+### Adding New Pages
+
+1. Create a new component in `src/pages/YourPage/YourPage.jsx`
+2. Add the route to `src/App.jsx`
+3. Add navigation item to `src/components/Layout/Layout.jsx`
 
 ## Deployment
 
-The website can be deployed to any static hosting service:
-
-- Vercel
-- Netlify
-- GitHub Pages
-- AWS S3 + CloudFront
+Build the application for production:
 
 ```bash
-# Build the project
 pnpm build
-
-# Deploy the dist/ folder to your hosting service
 ```
 
-## License
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
 
-MIT License - feel free to use this template for your own portfolio!
+## Contributing
 
+1. Follow the existing code structure and naming conventions
+2. Use Material-UI components and theme consistently
+3. Ensure responsive design for all screen sizes
+4. Test on different browsers and devices
