@@ -48,3 +48,40 @@ def interview_mode():
             print("User: " + user_input)
             stream_graph_updates(user_input)
             break
+
+
+def interview_ai_with_human_in_loop_mode():
+
+    def message_interviewee(question: str):
+        for event in interactive_mode_graph.stream({"messages": [{"role": "user", "content": question}]}, config=config):
+            for value in event.values():
+                message = value["messages"][-1].content
+                if type(message) == str:
+                    return message
+    
+    def message_interviewer(answer: str):
+        for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": answer}]}, config=config):
+            for value in event.values():
+                message = value["messages"][-1].content
+                if type(message) == str:
+                    return message
+
+
+    interviewer_message = "Hello"
+    interviewee_message = "Hello"
+    while True:
+        try:
+            user_input = input("User: ")
+            if user_input.lower() in ["quit", "exit", "q"]:
+                print("Goodbye!")
+                break
+            interviewer_message = message_interviewer(interviewee_message)
+            print("Interviewer: " + interviewer_message)
+
+            interviewee_message = message_interviewee(interviewer_message)
+            print("Interviewee: " + interviewee_message)
+
+        except Exception as e:
+            print(e)
+            m = e
+            break
