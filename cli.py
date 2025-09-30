@@ -2,10 +2,12 @@ from graphs.interactive_mode.state import State
 from graphs.interactive_mode.graph import graph as interactive_mode_graph
 from graphs.interviewer.graph import graph as interviewer_mode_graph
 
+config = {"configurable": {"thread_id": "1"}}
 
 def interactive_mode():
+
     def stream_graph_updates(user_input: str):
-        for event in interactive_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for event in interactive_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}, config=config):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 
@@ -28,7 +30,7 @@ def interactive_mode():
 
 def interview_mode():
     def stream_graph_updates(user_input: str):
-        for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}, config=config):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 
