@@ -1,10 +1,34 @@
 from graphs.interactive_mode.state import State
-from graphs.interactive_mode.graph import graph
+from graphs.interactive_mode.graph import graph as interactive_mode_graph
+from graphs.interviewer.graph import graph as interviewer_mode_graph
 
 
 def interactive_mode():
     def stream_graph_updates(user_input: str):
-        for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for event in interactive_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+            for value in event.values():
+                print("Assistant:", value["messages"][-1].content)
+
+
+    while True:
+        try:
+            user_input = input("User: ")
+            if user_input.lower() in ["quit", "exit", "q"]:
+                print("Goodbye!")
+                break
+            stream_graph_updates(user_input)
+        except:
+            # fallback if input() is not available
+            user_input = "What do you know about LangGraph?"
+            print("User: " + user_input)
+            stream_graph_updates(user_input)
+            break
+
+
+
+def interview_mode_mode():
+    def stream_graph_updates(user_input: str):
+        for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 
