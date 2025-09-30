@@ -26,7 +26,7 @@ def interactive_mode():
 
 
 
-def interview_mode_mode():
+def interview_mode():
     def stream_graph_updates(user_input: str):
         for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": user_input}]}):
             for value in event.values():
