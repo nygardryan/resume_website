@@ -27,7 +27,7 @@ def insert_answer(client: MilvusClient, question: str, answer: str):
 
 
 def search_answers(client: MilvusClient, question: str):
-    return client.search(collection_name=ANSWER_COLLECTION, data=embedding_fn.encode_queries([question])[0], limit=10, output_fields=["question", "answer"])
+    return client.search(collection_name=ANSWER_COLLECTION, data=embedding_fn.encode_queries([question]), limit=10, output_fields=["question", "answer"])
 
 
 
