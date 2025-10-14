@@ -1,6 +1,8 @@
 from graphs.interactive_mode.state import State
 from graphs.interactive_mode.graph import graph as interactive_mode_graph
 from graphs.interviewer.graph import graph as interviewer_mode_graph
+from database import client
+
 
 config = {"configurable": {"thread_id": "1"}}
 
@@ -71,15 +73,9 @@ def interview_ai_with_human_in_loop_mode():
     interviewee_message = "Hello"
     while True:
         try:
-            user_input = input("User: ")
-            if user_input.lower() in ["quit", "exit", "q"]:
-                print("Goodbye!")
-                break
             interviewer_message = message_interviewer(interviewee_message)
-            print("Interviewer: " + interviewer_message)
 
             interviewee_message = message_interviewee(interviewer_message)
-            print("Interviewee: " + interviewee_message)
 
         except Exception as e:
             print(e)

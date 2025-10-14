@@ -74,6 +74,8 @@ logs/
 *.sqlite
 *.sqlite3
 *.sqlite3-journal
+resume_db.db
+resume_db.db.lock
 
 # Node.js / Frontend
 node_modules/
