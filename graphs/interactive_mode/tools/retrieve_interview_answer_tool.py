@@ -1,6 +1,8 @@
 from langchain_core.tools import tool
+from database.collections import search_answers
+from database import client
 
-
+import pdb
 
 
 
@@ -16,5 +18,9 @@ def retrieve_interview_question_answer_tool(interview_question: str):
         List of tuples of (question, answer)
     """
     print("INTERVIEW QUESTION ASKED: " + interview_question)
+
+    answers = search_answers(client, interview_question)
+
+    print("ANSWERS: ", answers)
 
     return [("Where was the last place you worked?", "I worked at RLDatix from 2022 to present."), ("What is your favorite programming language?", "I like Python because it is a versatile language that can be used for a variety of tasks.")]
