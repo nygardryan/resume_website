@@ -1,5 +1,6 @@
 
 from pymilvus import MilvusClient, model
+import uuid
 
 
 RESUME_COLLECTION = "resumes"
@@ -23,7 +24,8 @@ def clear_database(client: MilvusClient):
 
 
 def insert_answer(client: MilvusClient, question: str, answer: str):
-    client.insert(collection_name=ANSWER_COLLECTION, data=[{"question": question, "answer": answer, "vector": embedding_fn.encode_queries([question])[0]}])
+    uuid = str(uuid.uuid4())
+    client.insert(collection_name=ANSWER_COLLECTION, data=[{"id": uuid, "question": question, "answer": answer, "vector": embedding_fn.encode_queries([question])[0]}])
 
 
 def search_answers(client: MilvusClient, question: str):

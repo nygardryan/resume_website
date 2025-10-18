@@ -4,7 +4,6 @@ from database import client
 
 
 
-
 @tool
 def retrieve_interview_question_answer_tool(interview_question: str):
     """
@@ -22,15 +21,14 @@ def retrieve_interview_question_answer_tool(interview_question: str):
 
     response = []
 
+    print("ANSWERS: ", answers)
+
+
     for answer in answers:
-        response.append((answer["question"], answer["answer"]))
+        if answer:
+            response.append((answer["question"], answer["answer"]))
 
-    print("ANSWERS: ", response)
-
-    # If no answers found or answers are not relevant enough, return empty list
-    # This will trigger the user interrupt
     if not response or len(response) == 0:
-        print("No relevant answers found in database. Triggering user interrupt.")
         return []
-
+    
     return response
