@@ -62,6 +62,7 @@ def interview_ai_with_human_in_loop_mode():
                     return message
     
     def message_interviewer(answer: str):
+        print("Response to Interviewer: " + answer)
         for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": answer}]}, config=config):
             for value in event.values():
                 message = value["messages"][-1].content

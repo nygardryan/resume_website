@@ -24,8 +24,8 @@ def clear_database(client: MilvusClient):
 
 
 def insert_answer(client: MilvusClient, question: str, answer: str):
-    uuid = str(uuid.uuid4())
-    client.insert(collection_name=ANSWER_COLLECTION, data=[{"id": uuid, "question": question, "answer": answer, "vector": embedding_fn.encode_queries([question])[0]}])
+    answer_id = str(uuid.uuid4())
+    client.insert(collection_name=ANSWER_COLLECTION, data=[{"id": answer_id, "question": question, "answer": answer, "vector": embedding_fn.encode_queries([question])[0]}])
 
 
 def search_answers(client: MilvusClient, question: str):
