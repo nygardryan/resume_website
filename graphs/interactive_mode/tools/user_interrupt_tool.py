@@ -10,10 +10,8 @@ import pdb
 @tool
 def human_assistance(question: str) -> str:
     """Request human to answer a question."""
-    print("HUMAN ASSISTANCE: ", question)
-    human_response = interrupt("Please answer the following question: " + question)
-    pdb.set_trace()
+    human_response = input("Human Assistance: " + question)
     insert_answer(client, question, human_response)
     
-    return {"human_feedback": human_response}
+    return human_response
 

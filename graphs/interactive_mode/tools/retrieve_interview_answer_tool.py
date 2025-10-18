@@ -15,7 +15,6 @@ def retrieve_interview_question_answer_tool(interview_question: str):
     Returns:
         List of tuples of (question, answer) or empty list if no good answers found
     """
-    print("INTERVIEW QUESTION ASKED: " + interview_question)
 
     answers = search_answers(client, interview_question)
 

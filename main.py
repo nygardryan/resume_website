@@ -7,4 +7,8 @@ from cli import interactive_mode, interview_mode, interview_ai_with_human_in_loo
 
 
 if __name__ == "__main__":
-    interview_ai_with_human_in_loop_mode()
+    try:
+        interview_ai_with_human_in_loop_mode()
+    except Exception as e:
+        print(e)
+        
