@@ -2,6 +2,7 @@ from graphs.interactive_mode.state import State
 from graphs.interactive_mode.graph import graph as interactive_mode_graph
 from graphs.interviewer.graph import graph as interviewer_mode_graph
 from database import client
+import pdb
 
 
 config = {"configurable": {"thread_id": "1"}}
@@ -62,6 +63,7 @@ def interview_ai_with_human_in_loop_mode():
                     return message
     
     def message_interviewer(answer: str):
+        pdb.set_trace()
         print("Response to Interviewer: " + answer)
         for event in interviewer_mode_graph.stream({"messages": [{"role": "user", "content": answer}]}, config=config):
             for value in event.values():
@@ -73,12 +75,6 @@ def interview_ai_with_human_in_loop_mode():
     interviewer_message = "Hello"
     interviewee_message = "Hello"
     while True:
-        try:
-            interviewer_message = message_interviewer(interviewee_message)
+        interviewer_message = message_interviewer(interviewee_message)
 
-            interviewee_message = message_interviewee(interviewer_message)
-
-        except Exception as e:
-            print(e)
-            m = e
-            break
+        interviewee_message = message_interviewee(interviewer_message)
