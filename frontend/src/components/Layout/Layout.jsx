@@ -20,6 +20,7 @@ import {
   Person as PersonIcon,
   Work as WorkIcon,
   ContactMail as ContactIcon,
+  SmartToy as ChatbotIcon,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PageContainer } from '../../styles/globalStyles';
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
     { text: 'About', path: '/about', icon: <PersonIcon /> },
     { text: 'Resume', path: '/resume', icon: <WorkIcon /> },
     { text: 'Contact', path: '/contact', icon: <ContactIcon /> },
+    { text: 'Chatbot', path: '/chatbot', icon: <ChatbotIcon /> },
   ];
 
   const handleDrawerToggle = () => {
