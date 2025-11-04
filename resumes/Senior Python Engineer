@@ -6,29 +6,53 @@ Senior Python Engineer with extensive experience designing scalable backend syst
 
 Core Skills
 
-Python (3.10–3.12), SQLAlchemy ORM, Alembic, Flask
+**Python (3.10–3.12):** Flask, SQLAlchemy ORM, Alembic, Celery, Async Programming
 
-Celery, Redis, Postgres (pgvector, composite indexes)
+**Databases:** PostgreSQL, MySQL, pgvector, Composite Indexes, Advanced Query Optimization
 
-API Design (REST/GraphQL), Async Workflows
+**API Design:** REST/GraphQL, Async Workflows, Distributed Systems
 
-Unit/Integration Testing, Pytest, CI/CD
+**Testing:** Unit/Integration Testing, Pytest, CI/CD Pipelines
 
-AI/LLM Integration (Claude, ChatGPT, Gemini APIs)
+**AI/LLM:** LangGraph, Vector Embeddings, RAG Implementation, Claude/ChatGPT APIs
+
+**Cloud & DevOps:** AWS, Docker, Google Cloud, Celery Task Queues, Redis
 
 Professional Experience
-Senior Engineer – RLDatix (Innovation Team)
-2022–Present
 
-Architected EAV-style form system with dynamic FormTemplate / FieldLibrary / FormSubmissionAnswers, supporting 20+ healthcare safety forms.
+**Full Stack Engineer** – RLDatix (Innovation Team)  
+*2025–Present*
 
-Implemented pgvector embeddings + RAG pipelines for patient lookup, enabling fast fuzzy matching on MRN, DOB, and name.
+• Architected database models and relationships for AI-powered chatbot application using Flask/Python backend
+• Implemented LangGraph integration with PostgreSQL conversation persistence for dynamic form creation
+• Developed RAG-enabled fields using vector embeddings for intelligent data retrieval
+• Built async Celery workers for multi-prompt chains in AI-powered form completion
+• Led performance optimizations across millions of rows with advanced SQL techniques
 
-Designed Prompt Orchestration Framework: async Celery workers running multi-prompt chains for AI-powered form completion, cutting turnaround time by 60%.
+**Full Stack Engineer** – SocialClimb  
+*2022–2024*
 
-Led multiple Alembic enum migrations, composite index creation, and performance optimizations across millions of rows.
+• Implemented EAV model (Entity Attribute Value) for custom patient attributes with optimized SQL queries handling millions of rows
+• Integrated Salesforce API for automated data syncing with robust logging and error tracking
+• Created multiple SDKs for AWS Bedrock, Google Cloud, Anthropic Claude, Twilio, and Salesforce APIs
+• Developed PHI data abstraction system for secure database testing with automated protections
+• Led multiple Alembic migrations, composite index creation, and database performance optimizations
 
-Integrated Flask APIs with React front-end and AWS services, ensuring scalability and low latency.
+**QA Automation Engineer** – SocialClimb  
+*2020–2022*
+
+• Led Selenium automation framework development using component-based architecture
+• Implemented distributed testing system with Master/Worker paradigm handling 750+ automated tests
+• Created cloud-hosted test management platform for parallel test analysis and reporting
+• Conducted penetration testing, identifying vulnerabilities in role escalation and endpoint spoofing
+
+**Manual QA Engineer** – Fortem (Drone Defense)  
+*2018–2020*
+
+• Tested radar systems (R20/R30), autonomous drones, and Skydome command software
+• Developed expertise in networking fundamentals, DevOps tools, and automation testing
+• Created automated tests using Selenium and contributed to simulation software development
+• Trained new QA team members and established testing strategies
 
 Projects
 
@@ -37,4 +61,7 @@ EvolutionSimulationV1 (GitHub) – Python agent-based simulation with custom mat
 Medication Analysis CLI – AI tool to parse medication records and identify dosage anomalies using LLM APIs.
 
 Education
-B.S. Computer Science – [Your University]
+
+**A.S. Business** – LDS Business College
+
+**Bottega Coding Bootcamp** – Ruby on Rails Full-Stack Development

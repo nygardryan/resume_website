@@ -1,0 +1,118 @@
+
+## Fortem 2018-2020 Manual QA
+Fortem was my entry into the software industry, I was hired as manual QA, I spent a lot of my free time studying and learning all I could about the software. 
+
+At Fortem I made myself useful, I had a very hands off manager and so I took it upon myself to figure out where I could help each day. Normally that involved asking the engineering team what new features they are creating and how I could assist in the testing of that feature.
+
+Fortem was a drone defense company, the three primary products I tested were the radars created by fortem, such as the R20 and R30 radars, the drones produced my Fortem, and Skydome, which was the command software that would marry the eyes of the radar with the drone, were you could command the autonomous drone to attack targets identified by the radars.
+
+Because of this whole system I gained good hands-on experience with networking fundamentals, Sometimes there would be networking issues I would have to diagnose, so I became experienced with low level devops themes, such as networking, wireshark, ssh, scp, bash scripts, how api requests work, what routes api requests take depending on the topology of the network, and so on. I was also able to learn selenium where I made some automated tests for Skydome, and there was one point I was able to code a controller into the simulation software the engineers used so you could move the drone via an xbox controller.
+
+Eventually the QA team grew at Fortem where I took on the responsibility of training the new QA team members, I would train them on how to be self-starters and we would make goals and come up with testing strategies as a team.
+
+Fortem was a very fast paced environment where I had the opportunity to prove my problem solving skills.
+
+Some notable skills I learned while at fortem are:
+1. Git
+2. Selenium
+3. Systemctl
+4. Linux
+5. Python
+6. Node.js
+7. Nmap
+8. Wireshark
+9. Computer Networking
+10. Bash
+11. Docker
+12. Professional Drone Piloting Experience
+13. SFTP
+14. CronJobs
+
+## SocialClimb QA Automation Engineer 2020-2022
+Because of the selenium experience I had gained from Fortem I was able to get hired on at SocialClimb as an QA automation engineer. I soon became the owner of the project as the other QA engineer was promoted to a Full Stack Engineering Role.
+
+I had some ideas on how to improve the Selenium Project. It is a core belief of mine that Software should be structured to match reality. So just as Frontend Development has components, so should Selenium have components, and just how Frontend Components can contain sub-components, Selenium code should be structured so Components have sub-components. So I built upon Selenium into a Component Class model, where selenium Components could have sub-components. This add on I built also has the cool feature of handling StaleElementException automatically. So imagine if you grab a component on a page, and then you leave the page, and then come back to that same page and want to act upon that same element again. In my code I would automatically search for the element again after the user attempts to interact with that element again. The reason I believe Selenum code should be structured just as the engineers have the code structured is because if an engineer edits an element then only one adjustment on the selenium side needs adjusting as well. This is the ideal situation, 1 change on the engineer side should equate to 1 change in the selenium code.
+
+The second Improvement I made to the Selenium Project was distributed testing. I frameworked out a system using the Master/Worker paradigm where a Master Node would tell Workers to start on certain tests, this way we could distribute the workload. By the time I left the QA team we had over 750 automated selenium tests and so this was required.
+
+As a QA automation engineer you have to analyse the failing tests to find out why the failed, so in order to distribute this workload I created a web application which we hosted in the cloud for the management of the automated selenium tests. I took heavy inspiration from TestRail, where you could start a test plan, which would kick off the tests, and then you could leave notes on the test results for the other QA engineers to read, and you could change the status of the test result as outdated - indicating that the automated test needs updating, passed - for old tests that have not been updated yet which are outdated, and so on. The big benefit of this system is we now have a management platform for all QA to use where many QA can be working on analyzing the automated test results in parallel without time-consuming in-person conversing   
+
+While a QA Automation Engineer I was also given some time to do some pentesting of our application and I was able to find a few vulnerabilities that the pentesting companies SocialClimb hired were unable to, mostly around Role escalation and endpoint spoofing. I also created my own man in the middle server using python with the requests library to modify the api requests coming from the frontend to the backend and the response from the backend to the frontend to adjust behavior to my liking.
+
+Skills:
+- Postman
+- Selenium
+- Google Cloud
+- Docker
+- Pentesting
+- Testrail
+
+## SocialClimb FullStack Engineer 2022-2024
+My manager saw my potential as a FullStack engineer after seeing all of my work on Selenium and promoted me to a FullStack Engineer.
+
+Once I became a fullstack engineer we also hired a really talented Devops engineer who proposed we should move all local development to docker containers to make Local development match the cloud infrastructure. I agreed and with my previous experience in Fortem I assisted the team in moving local development of the application to a full dockerized environment.
+
+From here on I will list all of the unique accomplishments I have contributed to the SocialClimb Application:
+
+Implemented an EAV model (Entity Attribute Value) into the application for customers to add custom attributes to their patients for them to filter their patients and create reports via these custom attributes. I had to make these SQL queries performant for millions of rows of data.
+
+Integrated with the SalesForce API in order to push up sales data to automate data syncing. Adding a robust logging system in the database to track data pushes for accuracy.
+
+Integrated with multiple API's to pull in patient data for our customers.
+
+Added an abstraction on our tables for removing PHI data (Personal Health Information) when copying the database in order to test real data without breaching PHI laws, this is a robust system with protections in place to prevent engineers from forgetting to indicate which columns are PHI related and which ones are not.
+
+I have assisted in keeping our initialization bash scripts up to date so when new engineers are on-boarded it is as smooth of a process as possible.
+
+Created multiple SDK's for many API's, such as AWS Bedrock, Google Cloud, Anthropic Claude, Twilio, Google Cloud Storage, and Salesforce. I make sure to wrap their client with helper functions that are easy to use, abstract so can deal with all use cases and are not rigid, and easy to understand.
+
+Implemented a hierarchy filtering so you can filter reports by locations and it will filter to all patients/providers that went/work at that location.
+
+SocialClimb has 100's of millions of rows of patient data, and so I have experience with making performant and complex SQL queries, sometimes the SQL queries for these reports are hundreds of lines long, and you have to break up the SQL query into sub-parts that you optimize. I have experience with advanced SQL topics like indexes, Unique Constraints, and CTE's. I don't know everything, at SocialClimb we have kept the database clean and have heavily relied upon SQLalchemy, so I am an expert at SQLAlchemy, but when optimizing a query I generally abstract the SQLAlchemy query into raw SQL and then optimize the raw SQL and then convert it back into SQLAlchemy code. So I do know SQL well.
+
+
+
+Skills:
+- Docker
+- SQLalchemy
+- Alembic
+- Python
+- Typescript
+- NGINX
+- API's
+- MySQL
+- Angular
+- Celery Tasks
+- Unit Tests
+
+
+## RLDatix FullStack Engineer 2025-Present
+
+SocialClimb was purchased in 2025 by RLDatix, upon the purchase RLDatix recognized the talent within the SocialClimb engineering team and commissioned the construction of a new product using the newfangled technology called Large Language Models. Their initial implementation of the idea was done through a contractor who left the project a mess once the contract was over. My manager picked me and two engineers to be a new team to head up fixing this project to prove that we knew what we were doing they had me and my team created to fix the project. The project was written in Go and React, so we had to learn this technology fast. Within 2 months we had fixed all of the bugs the contractors left in and had got the new chatbot working well. This chatbot was created so as you talked to it, it would fill out fixed fields in the background. The purpose was for Incident reports within hospitals where instead of filling out a 150 field form you could instead just talk to a Chatbot and vomit out the situation and it would automatically fill out the fields. This first implementation was not quite fluid enough, but my team and I had proven ourselves so we were greenlit to create the V2 of this product.
+
+The V2 project was written with Flask Python backend, PostgreSQL, React Frontend with react hook form, and Tanstack Query. Amazon AWS was our cloud environment. Local development using Docker.
+
+The concept of V2 was a more dynamic version of V1, where users could create forms from the ground up with any kind of field you could imagine, single select, multi-select, open text, file upload, Datetime, Boolean, and RAG implemented field. Then you could talk to the chatbot and it would choose the most appropriate form depending on the context of the conversation and automatically start filling out fields.
+
+I was the architect around the Database models and their relationships, as well as the chatbot integration and having the chatbot fill out the fields from the conversation. I have experience with Vector Embeddings for RAG (Retrieval - Augmented Generation) implementation where the LLM can find rows from the database for Table specific fields.
+
+We have recently adopted LangGraph, which is becoming a standard framework library for creating Chatbots within an application. I have implemented PostgresqlSaver into our LangGraph so we can save the conversation and then let the user view the conversation later when viewing the submission.
+
+A few other notable additions to this product are:
+- Ability to filter submissions via your custom fields and build reports.
+
+Skills:
+- LangGraph
+- React
+- React Hook Form
+- Tanstack Query
+- PostgreSQL
+- Unit Tests
+- LLM's
+- Creating Chatbots
+- Junie
+
+
+
+
+

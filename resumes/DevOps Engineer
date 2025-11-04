@@ -6,29 +6,53 @@ DevOps Engineer with strong expertise in automation, CI/CD, and cloud-native inf
 
 Core Skills
 
-CI/CD: GitHub Actions, Jenkins, Build Automation
+**CI/CD:** GitHub Actions, Jenkins, Build Automation, Docker
 
-Cloud: AWS (EC2, S3, RDS, ECS), Docker, Terraform
+**Cloud:** AWS (EC2, S3, RDS, ECS), Google Cloud, Docker, Terraform
 
-Monitoring & Logging: Grafana, Prometheus, ELK Stack
+**Monitoring & Logging:** Grafana, Prometheus, ELK Stack, System Monitoring
 
-Scripting: Python, Bash
+**Scripting:** Python, Bash, Linux System Administration
 
-Infrastructure as Code & Deployment Strategies
+**Networking:** Computer Networking, Wireshark, SSH, SCP, Network Topology
+
+**Databases:** PostgreSQL, MySQL, pgvector, Advanced Indexing
+
+**Security:** Penetration Testing, Vulnerability Assessment, Infrastructure Security
 
 Professional Experience
-DevOps Engineer – RLDatix (Innovation Team)
-2022–Present
 
-Built CI/CD pipelines for backend services and React front-end deployments, automating test, build, and release processes.
+**Full Stack Engineer** – RLDatix (Innovation Team)  
+*2025–Present*
 
-Managed containerized microservices with Docker and orchestrated deployments across staging and production.
+• Deployed and maintained AI-powered chatbot application using Docker containers and AWS cloud infrastructure
+• Implemented CI/CD pipelines for Flask/Python backend and React frontend deployments
+• Managed PostgreSQL database with pgvector extensions for AI/ML workloads
+• Automated infrastructure provisioning and monitoring for healthcare applications
 
-Automated infrastructure provisioning with Infrastructure-as-Code templates.
+**Full Stack Engineer** – SocialClimb  
+*2022–2024*
 
-Implemented system monitoring dashboards with alerts for service health and performance degradation.
+• Led migration of local development environment to Docker containers for infrastructure consistency
+• Implemented automated testing and deployment pipelines for Python/TypeScript applications
+• Managed MySQL databases with advanced indexing strategies for millions of patient records
+• Deployed applications using NGINX, Celery task queues, and cloud hosting services
 
-Collaborated with backend and AI teams to deploy model-driven APIs into secure, scalable environments.
+**QA Automation Engineer** – SocialClimb  
+*2020–2022*
+
+• Built distributed testing infrastructure using Master/Worker paradigm for 750+ automated tests
+• Created cloud-hosted test management platform with automated deployment and monitoring
+• Implemented CI/CD pipelines for Selenium test automation and reporting
+• Conducted infrastructure security testing and vulnerability assessments
+
+**Manual QA Engineer** – Fortem (Drone Defense)  
+*2018–2020*
+
+• Diagnosed networking issues using Wireshark, SSH, SCP, and bash scripting
+• Gained hands-on experience with Linux system administration and networking fundamentals
+• Automated testing workflows and contributed to simulation software development
+• Managed drone defense system infrastructure and network topology
 
 Projects
 
@@ -37,4 +61,7 @@ End-to-end deployment workflows for healthcare web apps.
 Automated testing suite integrated into CI/CD pipelines.
 
 Education
-B.S. Computer Science – [Your University]
+
+**A.S. Business** – LDS Business College
+
+**Bottega Coding Bootcamp** – Ruby on Rails Full-Stack Development

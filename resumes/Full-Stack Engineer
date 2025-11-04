@@ -6,29 +6,54 @@ Full-Stack Engineer with strong backend foundations in Python (Flask, SQLAlchemy
 
 Core Skills
 
-Frontend: React, TypeScript, Vite, TanStack Router, React Query, MUI 5
+**Frontend:** React, TypeScript, Angular, React Hook Form, Tanstack Query, MUI 5
 
-Backend: Python, Flask, SQLAlchemy, Alembic, Celery
+**Backend:** Python, Flask, SQLAlchemy, Alembic, Celery, Async APIs
 
-Database: Postgres, pgvector, advanced indexing
+**Database:** PostgreSQL, MySQL, pgvector, Advanced Indexing & Query Optimization
 
-AI/LLM Tooling: Claude, ChatGPT, Gemini APIs
+**AI/LLM:** LangGraph, Vector Embeddings, RAG Implementation, Claude/ChatGPT APIs
 
-CI/CD: GitHub Actions, Docker, AWS
+**Cloud & DevOps:** AWS, Docker, Google Cloud, CI/CD Pipelines, NGINX
+
+**Testing & Automation:** Selenium, Unit Testing, Penetration Testing, Distributed Testing
 
 Professional Experience
-Full-Stack Engineer – RLDatix (Innovation Team)
-2022–Present
 
-Built React front-end system with dynamic form rendering using MUI 5 + custom design tokens.
+**Full Stack Engineer** – RLDatix (Innovation Team)  
+*2025–Present*
 
-Implemented TanStack Router navigation for nested routes and optimized React Query data fetching.
+• Leading development of AI-powered chatbot application for hospital incident reporting
+• Built React frontend with React Hook Form, Tanstack Query, and dynamic form rendering
+• Architected Flask/Python backend with PostgreSQL database models and relationships
+• Implemented LangGraph integration with PostgreSQL conversation persistence
+• Developed RAG-enabled fields using vector embeddings for intelligent data retrieval
 
-Developed Severity Control Settings page, enabling admin control over AHRQ harm scales with modals for active form conflicts.
+**Full Stack Engineer** – SocialClimb  
+*2022–2024*
 
-Integrated Flask backend APIs with LLM-powered chatbot workflows, including field validation and confirmation UI.
+• Implemented EAV model (Entity Attribute Value) for custom patient attributes with optimized SQL queries handling millions of rows
+• Integrated Salesforce API for automated data syncing with robust logging and error tracking
+• Created multiple SDKs for AWS Bedrock, Google Cloud, Anthropic Claude, Twilio, and Salesforce APIs
+• Developed PHI data abstraction system for secure database testing with automated protections
+• Migrated local development to Docker containers for infrastructure consistency
+• Built Angular frontend components and TypeScript applications
 
-Designed deepPurple design palette + reusable component library for internal apps.
+**QA Automation Engineer** – SocialClimb  
+*2020–2022*
+
+• Led Selenium automation framework development using component-based architecture
+• Implemented distributed testing system with Master/Worker paradigm handling 750+ automated tests
+• Created cloud-hosted test management platform for parallel test analysis and reporting
+• Conducted penetration testing, identifying vulnerabilities in role escalation and endpoint spoofing
+
+**Manual QA Engineer** – Fortem (Drone Defense)  
+*2018–2020*
+
+• Tested radar systems (R20/R30), autonomous drones, and Skydome command software
+• Developed expertise in networking fundamentals, DevOps tools, and automation testing
+• Created automated tests using Selenium and contributed to simulation software development
+• Trained new QA team members and established testing strategies
 
 Projects
 
@@ -37,4 +62,7 @@ Resume Website (Webador) – AI-powered resume website with LangGraph integratio
 Streamlit Data Tools – Built exploratory dashboards with custom Python logic.
 
 Education
-B.S. Computer Science – [Your University]
+
+**A.S. Business** – LDS Business College
+
+**Bottega Coding Bootcamp** – Ruby on Rails Full-Stack Development
