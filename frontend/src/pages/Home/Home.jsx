@@ -15,6 +15,7 @@ import {
   Download as DownloadIcon,
 } from '@mui/icons-material';
 import { MainContent, SectionContainer } from '../../styles/globalStyles';
+import ChatPanel from '../../components/ChatPanel/ChatPanel';
 
 const Home = () => {
   const handleDownloadResume = () => {
@@ -45,6 +46,7 @@ const Home = () => {
           </Box>
         </SectionContainer>
       </Container>
+      <ChatPanel />
     </MainContent>
   );
 };
