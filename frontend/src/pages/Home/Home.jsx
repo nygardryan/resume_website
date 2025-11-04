@@ -30,7 +30,6 @@ const Home = () => {
   return (
     <MainContent>
       <Container maxWidth="lg">
-        {/* Hero Section */}
         <SectionContainer>
           <Box sx={{ textAlign: 'center', py: 4 }}>
             <Typography variant="h1" component="h1" gutterBottom>

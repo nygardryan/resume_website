@@ -1,7 +1,7 @@
 from langchain_core.tools import tool
 from database.collections import search_answers
 from database import client
-
+import pdb
 
 
 @tool
@@ -21,11 +21,11 @@ def retrieve_interview_question_answer_tool(interview_question: str):
     response = []
 
     print("ANSWERS: ", answers)
-
-
+    
     for answer in answers:
         if answer:
-            response.append((answer["question"], answer["answer"]))
+            for a in answer:
+                response.append((a["question"], a["answer"]))
 
     if not response or len(response) == 0:
         return []
