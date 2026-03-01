@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import Optional
 from graphs.interactive_mode.graph import graph as interactive_mode_graph
 import uuid
+import re
 
 app = FastAPI(title="Resume Website API", version="1.0.0")
 
@@ -25,6 +26,43 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     thread_id: str
+
+
+BRIEF_RESPONSE_WORD_LIMIT = 90
+DETAILED_RESPONSE_WORD_LIMIT = 180
+DETAIL_REQUEST_TERMS = {
+    "detail",
+    "detailed",
+    "more detail",
+    "deep dive",
+    "full breakdown",
+    "comprehensive",
+    "elaborate",
+    "longer answer",
+}
+
+
+def _requested_detailed_answer(message: str) -> bool:
+    normalized_message = message.lower()
+    return any(term in normalized_message for term in DETAIL_REQUEST_TERMS)
+
+
+def _normalize_response_format(response: str) -> str:
+    # Keep formatting lightweight and readable by default.
+    normalized = response.replace("**", "").strip()
+    normalized = re.sub(r"\n{3,}", "\n\n", normalized)
+    return normalized
+
+
+def _truncate_to_word_limit(response: str, word_limit: int) -> str:
+    words = response.split()
+    if len(words) <= word_limit:
+        return response
+
+    truncated = " ".join(words[:word_limit]).rstrip(",;:")
+    if not truncated.endswith((".", "!", "?")):
+        truncated += "..."
+    return truncated
 
 
 @app.get("/")
@@ -70,7 +108,17 @@ async def chat(request: ChatRequest):
         
         if response_content is None:
             raise HTTPException(status_code=500, detail="Failed to get response from chatbot")
-        
+
+        word_limit = (
+            DETAILED_RESPONSE_WORD_LIMIT
+            if _requested_detailed_answer(request.message)
+            else BRIEF_RESPONSE_WORD_LIMIT
+        )
+        response_content = _truncate_to_word_limit(
+            _normalize_response_format(response_content),
+            word_limit,
+        )
+
         return ChatResponse(response=response_content, thread_id=thread_id)
         
     except Exception as e:
