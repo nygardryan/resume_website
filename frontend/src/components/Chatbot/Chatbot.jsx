@@ -18,7 +18,8 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hello! I can help answer questions about resumes and interview preparation. How can I assist you today?',
+      content:
+        "Hi! I'm Ryan's career assistant. Share the role you're hiring for and I can quickly map his fit, highlight relevant wins, and suggest the best resume version.",
     },
   ]);
   const [input, setInput] = useState('');
