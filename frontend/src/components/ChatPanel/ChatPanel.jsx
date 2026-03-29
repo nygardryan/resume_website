@@ -18,13 +18,15 @@ import ChatIcon from '@mui/icons-material/Chat';
 import MinimizeIcon from '@mui/icons-material/Minimize';
 
 const API_URL = 'http://localhost:8000/api/chat';
+const WELCOME_MESSAGE =
+  "Hi, I’m Ryan’s career assistant. Share the role and I’ll quickly map his fit, highlight relevant wins, and suggest the best resume version.";
 
 const ChatPanel = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hello! I can help answer questions about resumes and interview preparation. How can I assist you today?',
+      content: WELCOME_MESSAGE,
     },
   ]);
   const [input, setInput] = useState('');

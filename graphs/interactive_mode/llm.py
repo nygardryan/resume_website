@@ -3,7 +3,7 @@ from .tools import tools
 
 
 llm = init_chat_model(
-    model="claude-3-5-haiku-20241022",
+    model="claude-sonnet-4-20250514",
 )
 
 
