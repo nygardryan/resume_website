@@ -10,7 +10,7 @@ const ChatbotPage = () => {
           Chatbot
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Ask me questions about resumes, interview preparation, and more!
+          Chat with Ryan's assistant about his background, projects, and best-fit resume version.
         </Typography>
       </Box>
       <Chatbot />
