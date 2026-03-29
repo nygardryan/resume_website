@@ -31,7 +31,10 @@ def test_resume_tool_handles_read_errors(import_fresh, monkeypatch):
             return _BrokenFile()
 
     monkeypatch.setattr(module, "resume_path", _BadPath())
-    monkeypatch.setattr(module, "open", lambda *_args, **_kwargs: (_ for _ in ()).throw(OSError("cannot open")))
+    monkeypatch.setattr(
+        "builtins.open",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(OSError("cannot open")),
+    )
 
     result = module.resume_tool("resume.txt")
 
