@@ -128,12 +128,11 @@ const ChatPanel = () => {
               sx={{
                 width: 64,
                 height: 64,
-                backgroundColor: 'primary.main',
+                background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)',
                 color: 'white',
-                boxShadow: 3,
+                boxShadow: '0 14px 30px rgba(37, 99, 235, 0.35)',
                 '&:hover': {
-                  backgroundColor: 'primary.dark',
-                  boxShadow: 6,
+                  boxShadow: '0 18px 34px rgba(37, 99, 235, 0.42)',
                 },
                 transition: 'all 0.3s ease',
               }}
@@ -161,8 +160,9 @@ const ChatPanel = () => {
             display: 'flex',
             flexDirection: 'column',
             zIndex: 1000,
-            borderRadius: 2,
+            borderRadius: 3,
             overflow: 'hidden',
+            backdropFilter: 'blur(12px)',
           }}
         >
           {/* Header */}
@@ -172,7 +172,7 @@ const ChatPanel = () => {
               alignItems: 'center',
               justifyContent: 'space-between',
               padding: 2,
-              backgroundColor: 'primary.main',
+              background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)',
               color: 'white',
             }}
           >
@@ -203,7 +203,7 @@ const ChatPanel = () => {
               flex: 1,
               overflowY: 'auto',
               padding: 2,
-              backgroundColor: '#f5f5f5',
+              backgroundColor: 'rgba(243, 246, 252, 0.92)',
               '&::-webkit-scrollbar': {
                 width: '8px',
               },
@@ -256,10 +256,12 @@ const ChatPanel = () => {
                     elevation={1}
                     sx={{
                       padding: 1.5,
-                      backgroundColor:
-                        message.role === 'user' ? 'primary.light' : 'white',
+                      background:
+                        message.role === 'user'
+                          ? 'linear-gradient(135deg, #2563eb 0%, #4f83ff 100%)'
+                          : 'rgba(255, 255, 255, 0.96)',
                       color: message.role === 'user' ? 'white' : 'text.primary',
-                      borderRadius: 2,
+                      borderRadius: 2.5,
                     }}
                   >
                     <Typography variant="body2" sx={{ wordBreak: 'break-word' }}>
@@ -317,7 +319,7 @@ const ChatPanel = () => {
               padding: 2,
               borderTop: 1,
               borderColor: 'divider',
-              backgroundColor: 'white',
+              backgroundColor: 'rgba(255, 255, 255, 0.92)',
               gap: 1,
             }}
           >
@@ -333,7 +335,7 @@ const ChatPanel = () => {
               size="small"
               sx={{
                 '& .MuiOutlinedInput-root': {
-                  borderRadius: 2,
+                  borderRadius: 2.5,
                 },
               }}
             />

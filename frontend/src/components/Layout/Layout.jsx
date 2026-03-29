@@ -10,7 +10,12 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
+  ListItemButton,
+  Container,
+  Divider,
+  Stack,
   Box,
+  Chip,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
@@ -40,6 +45,9 @@ const Layout = ({ children }) => {
     { text: 'Chatbot', path: '/chatbot', icon: <ChatbotIcon /> },
   ];
 
+  const appTitle = 'Alex Carter';
+  const appTagline = 'Software Engineer';
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -52,22 +60,30 @@ const Layout = ({ children }) => {
   };
 
   const drawer = (
-    <Box sx={{ width: 250 }}>
-      <Toolbar>
+    <Box sx={{ width: 280, height: '100%', p: 2 }}>
+      <Stack spacing={1.5} sx={{ mb: 2, mt: 1 }}>
         <Typography variant="h6" noWrap component="div">
-          Resume Website
+          {appTitle}
         </Typography>
-      </Toolbar>
+        <Chip size="small" color="primary" label={appTagline} sx={{ width: 'fit-content' }} />
+      </Stack>
+      <Divider sx={{ mb: 1 }} />
       <List>
         {menuItems.map((item) => (
-          <ListItem
-            button
-            key={item.text}
-            onClick={() => handleNavigation(item.path)}
-            selected={location.pathname === item.path}
-          >
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.text} />
+          <ListItem key={item.text} disablePadding sx={{ mb: 0.5 }}>
+            <ListItemButton
+              onClick={() => handleNavigation(item.path)}
+              selected={location.pathname === item.path}
+              sx={{
+                borderRadius: 2.5,
+                '&.Mui-selected': {
+                  backgroundColor: 'rgba(37, 99, 235, 0.12)',
+                },
+              }}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
@@ -76,40 +92,48 @@ const Layout = ({ children }) => {
 
   return (
     <PageContainer>
-      <AppBar position="static" elevation={1}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, cursor: 'pointer' }}
-            onClick={() => navigate('/')}
-          >
-            Resume Website
-          </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {menuItems.map((item) => (
-              <Button
-                key={item.text}
-                color="inherit"
-                onClick={() => handleNavigation(item.path)}
-                sx={{
-                  mx: 1,
-                  backgroundColor: location.pathname === item.path ? 'rgba(255,255,255,0.1)' : 'transparent',
-                }}
-              >
-                {item.text}
-              </Button>
-            ))}
-          </Box>
+      <AppBar position="sticky" elevation={0} sx={{ top: 14, mx: 'auto', width: 'calc(100% - 32px)', maxWidth: '1240px', borderRadius: 3 }}>
+        <Toolbar sx={{ minHeight: 72 }}>
+          <Container maxWidth={false} disableGutters sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 1.5, display: { md: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Box sx={{ cursor: 'pointer', flexGrow: 1 }} onClick={() => navigate('/')}>
+              <Typography variant="h6" component="div" sx={{ lineHeight: 1.2 }}>
+                {appTitle}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {appTagline}
+              </Typography>
+            </Box>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.75 }}>
+              {menuItems.map((item) => (
+                <Button
+                  key={item.text}
+                  color="inherit"
+                  onClick={() => handleNavigation(item.path)}
+                  sx={{
+                    px: 1.6,
+                    py: 0.8,
+                    borderRadius: 2.5,
+                    color: location.pathname === item.path ? 'primary.main' : 'text.primary',
+                    backgroundColor: location.pathname === item.path ? 'rgba(37, 99, 235, 0.1)' : 'transparent',
+                    '&:hover': {
+                      backgroundColor: 'rgba(37, 99, 235, 0.12)',
+                    },
+                  }}
+                >
+                  {item.text}
+                </Button>
+              ))}
+            </Box>
+          </Container>
         </Toolbar>
       </AppBar>
 
@@ -132,6 +156,31 @@ const Layout = ({ children }) => {
 
       <Box component="main" sx={{ flexGrow: 1 }}>
         {children}
+      </Box>
+      <Box component="footer" sx={{ px: 3, pb: 3 }}>
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+              borderRadius: 3,
+              py: 2,
+              px: 2.5,
+              backgroundColor: 'rgba(255, 255, 255, 0.75)',
+              border: '1px solid rgba(255, 255, 255, 0.9)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 1,
+              flexWrap: 'wrap',
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              © {new Date().getFullYear()} {appTitle}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Built with React + Material UI
+            </Typography>
+          </Box>
+        </Container>
       </Box>
     </PageContainer>
   );

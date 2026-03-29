@@ -7,6 +7,7 @@ import {
   Typography,
   CircularProgress,
   Avatar,
+  Chip,
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
@@ -91,27 +92,54 @@ const Chatbot = () => {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        maxWidth: '800px',
+        maxWidth: '860px',
         margin: '0 auto',
-        padding: 2,
+        padding: { xs: 1, sm: 2 },
       }}
     >
       <Paper
-        elevation={3}
+        elevation={0}
         sx={{
           display: 'flex',
           flexDirection: 'column',
           height: '600px',
           overflow: 'hidden',
+          borderRadius: 4,
+          backgroundColor: 'rgba(255, 255, 255, 0.84)',
+          border: '1px solid rgba(255, 255, 255, 0.92)',
+          backdropFilter: 'blur(10px)',
         }}
       >
+        <Box
+          sx={{
+            px: 2,
+            py: 1.5,
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 1,
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Avatar sx={{ bgcolor: 'secondary.main', width: 32, height: 32 }}>
+              <SmartToyIcon sx={{ fontSize: 18 }} />
+            </Avatar>
+            <Typography variant="subtitle1" fontWeight={600}>
+              Resume Assistant
+            </Typography>
+          </Box>
+          <Chip size="small" color="primary" variant="outlined" label="Online" />
+        </Box>
+
         {/* Messages Container */}
         <Box
           sx={{
             flex: 1,
             overflowY: 'auto',
             padding: 2,
-            backgroundColor: '#f5f5f5',
+            backgroundColor: 'rgba(247, 250, 255, 0.75)',
           }}
         >
           {messages.map((message, index) => (
@@ -146,12 +174,14 @@ const Chatbot = () => {
                   )}
                 </Avatar>
                 <Paper
-                  elevation={1}
+                  elevation={0}
                   sx={{
                     padding: 1.5,
                     backgroundColor:
-                      message.role === 'user' ? 'primary.light' : 'white',
+                      message.role === 'user' ? 'primary.main' : 'rgba(255,255,255,0.92)',
                     color: message.role === 'user' ? 'white' : 'text.primary',
+                    borderRadius: 2.5,
+                    border: message.role === 'user' ? 'none' : '1px solid rgba(15, 23, 42, 0.08)',
                   }}
                 >
                   <Typography variant="body1">{message.content}</Typography>
@@ -179,10 +209,12 @@ const Chatbot = () => {
                   <SmartToyIcon />
                 </Avatar>
                 <Paper
-                  elevation={1}
+                  elevation={0}
                   sx={{
                     padding: 1.5,
-                    backgroundColor: 'white',
+                    backgroundColor: 'rgba(255,255,255,0.92)',
+                    border: '1px solid rgba(15, 23, 42, 0.08)',
+                    borderRadius: 2.5,
                   }}
                 >
                   <CircularProgress size={20} />
@@ -200,7 +232,7 @@ const Chatbot = () => {
             padding: 2,
             borderTop: 1,
             borderColor: 'divider',
-            backgroundColor: 'white',
+            backgroundColor: 'rgba(255,255,255,0.84)',
           }}
         >
           <TextField
@@ -210,15 +242,31 @@ const Chatbot = () => {
             placeholder="Type your message..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
             disabled={loading}
-            sx={{ marginRight: 1 }}
+            sx={{
+              marginRight: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 2.5,
+              },
+            }}
           />
           <IconButton
             color="primary"
             onClick={handleSend}
             disabled={loading || !input.trim()}
-            sx={{ alignSelf: 'flex-end' }}
+            sx={{
+              alignSelf: 'flex-end',
+              backgroundColor: 'primary.main',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'primary.dark',
+              },
+              '&.Mui-disabled': {
+                backgroundColor: 'action.disabledBackground',
+                color: 'action.disabled',
+              },
+            }}
           >
             <SendIcon />
           </IconButton>
