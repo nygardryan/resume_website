@@ -76,6 +76,7 @@ logs/
 *.sqlite3-journal
 resume_db.db
 resume_db.db.lock
+.resume_db.db.lock
 
 # Node.js / Frontend
 node_modules/
